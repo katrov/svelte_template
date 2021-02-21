@@ -1,0 +1,27 @@
+{
+  "name": "svelte_template",
+  "version": "1.0.0",
+  "description": "Svelte starter template for frontend web applications",
+  "main": "index.js",
+  "description": "",
+  "maintainers": [
+    {
+      "name": "Александр Катров",
+      "email": "a.katrov@yandex.ru",
+      "url": "https://github.com/katrov"
+    }
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katrov/svelte_template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katrov/svelte_template/issues"
+  },
+  "homepage": "https://github.com/katrov/svelte_template#readme"
+}
