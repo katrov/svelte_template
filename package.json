@@ -16,11 +16,12 @@
     "build": "cross-env NODE_ENV=production webpack --progress --profile",
     "format": "prettier --write src",
     "types-check": "tsc --noemit",
-    "types-check:watch": "tsc --noemit --watch",
+    "types-check:watch": "tsc --noemit --watch --color",
     "svelte-check": "svelte-check",
-    "svelte-check:watch": "svelte-check --watch",
+    "svelte-check:watch": "svelte-check --watch --color",
     "eslint": "eslint --ext .ts src --fix --color",
-    "lint": "npm run eslint && npm run types-check && npm run svelte-check"
+    "lint": "npm run eslint && npm run types-check && npm run svelte-check",
+		"pre-commit": "lint-staged"
   },
   "husky": {
     "hooks": {
