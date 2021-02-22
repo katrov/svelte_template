@@ -11,6 +11,10 @@ dffff(45);
 dffff("45");
 dffff("45");
 dffff("45");
+dffff(45);
+dffff("45");
+dffff("45");
+dffff("45");
 var app = new App_svelte_1["default"]({
     target: document.body,
     props: { name: 'Alex' }
