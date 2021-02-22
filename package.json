@@ -21,7 +21,7 @@
     "svelte-check:watch": "svelte-check --watch",
     "eslint": "eslint --ext .ts src --fix --color",
     "lint": "npm run eslint && npm run types-check && npm run svelte-check",
-		"pre-commit": "lint-staged"
+    "pre-commit": "lint-staged"
   },
   "husky": {
     "hooks": {

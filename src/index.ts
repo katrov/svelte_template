@@ -12,6 +12,9 @@ const dffff = (val: number) => {
 console.log(ddd);
 dffff(45);
 dffff("45");
+dffff("45");
+dffff("45");
+
 
 const app = new App({
   target: document.body,
