@@ -19,26 +19,27 @@
     "types-check:watch": "tsc --noemit --watch",
     "svelte-check": "svelte-check",
     "svelte-check:watch": "svelte-check --watch",
-    "eslint": "eslint --ext .ts src --fix",
-    "lint": "npm run eslint && npm run types-check && npm run svelte-check"
+    "eslint": "eslint --ext .ts src --fix --color",
+    "lint": "npm run eslint && npm run types-check && npm run svelte-check",
+		"pre-commit": "lint-staged"
   },
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"src/**/*.ts": [
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
       "npm run types-check",
-			"npm run eslint"
+      "npm run eslint"
     ],
-		"src/**/*.svelte": [
-      "svelte-check"
+    "src/**/*.svelte": [
+      "npm run svelte-check"
     ],
-		"src/**/*.{svelte,ts}": [
-			"npm run format"
+    "src/**/*.{svelte,ts}": [
+      "npm run format"
     ]
-	},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/katrov/svelte_template.git"
