@@ -1,0 +1,14 @@
+.history
+.vscode
+node_modules
+jest/
+build/*
+dist/*
+public/*
+server/*
+src/**/dist/*.test.tsx
+src/**/*.test.tsx
+webpack.prod.js
+webpack.dev.js
+webpack.config.js
+.eslintrc.js

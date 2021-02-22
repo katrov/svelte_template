@@ -1,0 +1,7 @@
+{
+  "presets": [
+		["@babel/preset-env", { "debug": false, "targets": { "esmodules": true } }],
+		"@babel/preset-typescript"
+	],
+  "plugins": []
+}
