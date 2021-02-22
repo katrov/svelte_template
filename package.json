@@ -29,14 +29,14 @@
     }
   },
   "lint-staged": {
-    "src/**/*.ts": [
+    "*.ts": [
       "npm run types-check",
       "npm run eslint"
     ],
-    "src/**/*.svelte": [
+    "*.svelte": [
       "npm run svelte-check"
     ],
-    "src/**/*.{svelte,ts}": [
+    "*.{svelte,ts}": [
       "npm run format"
     ]
   },
