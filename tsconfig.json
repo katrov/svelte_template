@@ -29,6 +29,6 @@
 		"src/**/*.ts",
 		"typings/index.d.ts",
 	],
-  "exclude": ["node_modules/*", "public/*"],
+  "exclude": ["node_modules", "public"],
 	"extends": "@tsconfig/svelte/tsconfig.json"
 }
