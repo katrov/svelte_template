@@ -15,7 +15,9 @@
 	type Name = string;
 	export let name: Name = '';
 	import logo from 'src/assets/svelte-logo-horizontal.svg';
-	function dfsfds(value: string) {return console.log(value)};
+	function dfsfds(value: string) {
+		return console.log(value);
+	}
 </script>
 
 <h1>

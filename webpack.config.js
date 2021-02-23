@@ -30,7 +30,7 @@ module.exports = {
 			src:  path.resolve(__dirname, 'src'),
 			svelte: path.dirname(require.resolve('svelte/package.json'))
 		},
-		extensions: ['.mjs', '.js', '.ts', '.svelte'],
+		extensions: ['.mjs', '.js', '.svelte'],
 		mainFields: ['svelte', 'browser', 'module', 'main']
 	},
 	module: {
@@ -66,6 +66,7 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
+				exclude: /node_modules/,
 				use: [
 					cssLoader,
 					{
@@ -78,6 +79,7 @@ module.exports = {
 			},
 			{
 				test: /\.(jpg|jpeg|png|svg)$/,
+				exclude: /node_modules/,
 				use: [
 					{
 						loader: 'file-loader',

@@ -27,7 +27,7 @@
 	"include": [
 		"src/**/*",
 		"src/**/*.ts",
-		"typings/index.d.ts",
+		"typings/common.d.ts",
 	],
   "exclude": ["node_modules", "public"],
 	"extends": "@tsconfig/svelte/tsconfig.json"

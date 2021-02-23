@@ -14,8 +14,9 @@ module.exports = {
 	rules: {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-extra-boolean-cast": "off",
-    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/indent": [2, "tab"],
     "@typescript-eslint/camelcase": "off",
+		"no-tabs": 0,
 	},
 	settings: {
 		react: {
