@@ -10,6 +10,7 @@
     "isolatedModules": true,
 		"checkJs": false,
     "allowJs": true,
+		"noEmit": true,
 		"importsNotUsedAsValues": "preserve",
     "downlevelIteration": true,
 		"pretty": true,

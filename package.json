@@ -15,8 +15,8 @@
     "dev": "cross-env NODE_ENV=development webpack serve --progress --profile",
     "build": "cross-env NODE_ENV=production webpack --progress --profile",
     "format": "prettier --write src",
-    "types-check": "tsc --noemit",
-    "types-check:watch": "tsc --noemit --watch",
+    "types-check": "tsc",
+    "types-check:watch": "tsc --watch",
     "svelte-check": "svelte-check",
     "svelte-check:watch": "svelte-check --watch --color",
     "eslint": "eslint --ext .ts src --fix --color",
@@ -40,7 +40,7 @@
   "lint-staged": {
     "src/**/*.ts": [
       "npm run eslint",
-			"bash -c tsc --noEmit"
+			"bash -c tsc"
     ],
     "src/**/*.svelte": [
       "npm run svelte-check"
