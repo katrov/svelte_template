@@ -33,9 +33,9 @@ module.exports = {
 	resolve: {
 		alias: {
 			src:  path.resolve(__dirname, 'src'),
-			svelte: path.dirname(require.resolve('svelte/package.json'))
+			svelte: path.dirname(require.resolve('svelte/package.json')),
 		},
-		extensions: ['.mjs', '.js', '.svelte'],
+		extensions: ['.mjs', '.js', '.svelte', '.ts'],
 		mainFields: ['svelte', 'browser', 'module', 'main']
 	},
 	module: {
@@ -49,7 +49,6 @@ module.exports = {
 			},
 			{
 				test: /\.svelte$/,
-				exclude: /node_modules/,
 				use: {
 					loader: 'svelte-loader',
 					options: {
