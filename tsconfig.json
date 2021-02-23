@@ -28,6 +28,7 @@
 	"include": [
 		"src/**/*",
 		"src/**/*.ts",
+		"helpers/**/*",
 		"typings/common.d.ts",
 	],
   "exclude": ["node_modules", "public"],

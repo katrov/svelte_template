@@ -15,13 +15,10 @@
 	type Name = string;
 	export let name: Name = '';
 	import logo from 'src/assets/svelte-logo-horizontal.svg';
-	function dfsfds(value: string) {
-		return console.log(value);
-	}
 </script>
 
 <h1>
 	Hello {name}!
 </h1>
 <div class="logo" style="background-image: url({logo});"></div>
-<img src="{logo}" alt="Logo" />
+<img src="{logo}" alt="svelte-logo" />

@@ -5,6 +5,7 @@ jest/
 build/*
 dist/*
 public/*
+helpers/*
 server/*
 src/**/dist/*.test.tsx
 src/**/*.test.tsx

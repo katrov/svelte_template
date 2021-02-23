@@ -1,11 +1,16 @@
 const path = require('path');
+const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const sveltePreprocess = require("svelte-preprocess");
+const getProcessEnv = require('./helpers/getProcessEnv');
 
 const BUILD_DIR = path.resolve(__dirname, './build');
+const PUBLIC_DIR = path.resolve(__dirname, './public');
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const ENV = getProcessEnv(IS_PRODUCTION);
 
 const mode = process.env.NODE_ENV;
 const devtool = IS_PRODUCTION ? false : 'inline-source-map';
@@ -93,6 +98,7 @@ module.exports = {
 		],
 	},
 	plugins: [
+		new webpack.DefinePlugin(ENV),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin(
 			{
@@ -105,5 +111,17 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: 'static/[name].[hash:8].css',
 		}),
+		new CopyPlugin({
+      patterns: [
+        {
+					from: `${PUBLIC_DIR}/robots.txt`,
+					to: BUILD_DIR,
+				},
+				{
+					from: `${PUBLIC_DIR}/icons`,
+					to: `${BUILD_DIR}/icons`,
+				},
+      ],
+    }),
 	]
 };
