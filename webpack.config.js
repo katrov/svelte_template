@@ -4,8 +4,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const sveltePreprocess = require("svelte-preprocess");
 const getProcessEnv = require('./helpers/getProcessEnv');
+const sveltePreprocess = require("svelte-preprocess");
+const { scss } = require('svelte-preprocess');
 
 const BUILD_DIR = path.resolve(__dirname, './build');
 const PUBLIC_DIR = path.resolve(__dirname, './public');
@@ -53,11 +54,14 @@ module.exports = {
 					loader: 'svelte-loader',
 					options: {
 						compilerOptions: {
-							dev: !IS_PRODUCTION
+							dev: IS_PRODUCTION
 						},
-						emitCss: !IS_PRODUCTION,
-						hotReload: !IS_PRODUCTION,
-						preprocess: sveltePreprocess({})
+						emitCss: IS_PRODUCTION,
+						hotReload: IS_PRODUCTION,
+						preprocess: sveltePreprocess({}),
+						preprocess: [
+							scss(),
+						]
 					},
 				},
 			},
@@ -69,7 +73,7 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.css$/,
+				test: /\.(scss|css)$/,
 				exclude: /node_modules/,
 				use: [
 					cssLoader,
@@ -78,7 +82,18 @@ module.exports = {
 						options: {
 							url: false,
 						}
-					}
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									'postcss-normalize',
+									'autoprefixer',
+								]
+							},
+						},
+					},
 				]
 			},
 			{

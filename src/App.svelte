@@ -4,6 +4,8 @@
 	import Home from 'src/pages/Home.svelte';
 	import About from 'src/pages/About.svelte';
 	import Error from 'src/pages/Error.svelte';
+
+	import Button from 'src/components/Button/Button.svelte';
 </script>
 
 <Router>
@@ -18,5 +20,6 @@
 			<Route component="{Error}" />
 		</div>
 		<img src="{logo}" alt="svelte-logo" />
+		<Button />
 	</main>
 </Router>
