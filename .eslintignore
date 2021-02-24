@@ -9,8 +9,15 @@ helpers/*
 server/*
 src/**/dist/*.test.tsx
 src/**/*.test.tsx
+src/**/dist/*.test.js
+src/**/*.test.js
+src/**/dist/*.spec.js
+src/**/*.spec.js
 webpack.prod.js
 webpack.dev.js
 webpack.config.js
 .eslintrc.js
 postcss.config.js
+jest.config.js
+jest.transform.js
+babel.config.js

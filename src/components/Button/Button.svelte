@@ -4,7 +4,4 @@
 <script>
 </script>
 
-<button class="button">
-	Кнопка
-	<i class="button__icon"></i>
-</button>
+<button class="button"> Кнопка </button>
